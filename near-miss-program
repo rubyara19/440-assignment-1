@@ -1,0 +1,25 @@
+#TITLE
+#Name of file holding program
+#External files
+#External files the program creates
+#Created by: Ruby Radosevic and Carlos Manzo
+#Contact at: rubyaradosevic@lewisu.edu and {CARLO'S EMAIL}
+#Course: Software Engineering 44000 - {SECTION NUMBER}
+#Completed on: DATE OF SUBMISSION
+#Program explanation
+#Any resources used
+
+#Each declaration should include a comment explaining its use
+#Each subprogram (function,subroutine,object) should have an opening comment describing its purpose
+#Each loop should be preceded by a comment that describes its purpose
+#Any statement that is particularly unclear or tricky should have a clarifying comment
+
+
+
+
+
+
+
+
+#Submit only the clone command; I will run it according to the readme file that should be available on github
+#Include necessary libraries
