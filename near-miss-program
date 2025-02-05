@@ -1,3 +1,5 @@
+### INITIAL COMMENTS ###
+
 #TITLE
 #Name of file holding program
 #External files
@@ -9,17 +11,38 @@
 #Program explanation
 #Any resources used
 
+### NOTES ###
+
 #Each declaration should include a comment explaining its use
 #Each subprogram (function,subroutine,object) should have an opening comment describing its purpose
 #Each loop should be preceded by a comment that describes its purpose
 #Any statement that is particularly unclear or tricky should have a clarifying comment
 
+#near-miss(x,y,z,n,k)
+#2 < n < 12
+#10 <=x <= k
+#10 <=y <= k
+
+#NOTES: program takes n for the power, and k, which should be AT LEAST >=10 AND have an upper limit to stop crashing
 
 
+### PROGRAM ###
 
+#NEAR-MISS PROGRAM: ITERATE THROUGH ALL z NATURAL NUMBERS FOR GIVEN X and Y
+  # CALCULATE (x^n + y^n)
 
+  # FIND z and z+1 such that z^n < (x^n + y^n) < (z+1)^n
+  
+  # DETERMINE closer value (between z and z+1)
 
+  #SOLVE: ( (x^n + y^n) - ( (z+=1) ^ n) ) / (x^n + y^n) for RELATIVE size of the miss
 
+#ITERATE through all possible x and y natural numbers, tracking lowest relative miss
+
+#FOR EACH NEW SMALLEST RELATIVE MISS: PRINT current x,y,z, actual miss (x^n + y^n) - ( (z+=1) ^ n) and
+#relative miss ( (x^n + y^n) - ( (z+=1) ^ n) ) / (x^n + y^n)
+
+### SUBMISSION RULES ###
 
 #Submit only the clone command; I will run it according to the readme file that should be available on github
 #Include necessary libraries
