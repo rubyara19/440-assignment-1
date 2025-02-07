@@ -2,16 +2,14 @@
 
 #TITLE
 #Name of file holding program
-#External files
-#External files the program creates
 #Created by: Ruby Radosevic and Carlos Manzo
 #Contact at: rubyaradosevic@lewisu.edu and {CARLO'S EMAIL}
-#Course: Software Engineering 44000 - {SECTION NUMBER}
+#Course: Software Engineering 44000 - LT1
 #Completed on: DATE OF SUBMISSION
 #Program explanation
-#Any resources used
+#Any resources used {?}
 
-### NOTES ###
+### NOTES - TO BE DELETED ###
 
 #Each declaration should include a comment explaining its use
 #Each subprogram (function,subroutine,object) should have an opening comment describing its purpose
@@ -28,14 +26,28 @@
 
 ### PROGRAM ###
 
-#NEAR-MISS PROGRAM: ITERATE THROUGH ALL z NATURAL NUMBERS FOR GIVEN X and Y
-  # CALCULATE (x^n + y^n)
+#NEAR_MISS_ITERATION: solves for z value, actual miss, and relative miss for one x and y value
+def near_miss_iteration(n,x,y):
+    left_side = x**n + y**n
+    z=0
 
-  # FIND z and z+1 such that z^n < (x^n + y^n) < (z+1)^n
-  
-  # DETERMINE closer value (between z and z+1)
-
-  #SOLVE: ( (x^n + y^n) - ( (z+=1) ^ n) ) / (x^n + y^n) for RELATIVE size of the miss
+    #Takes larger between x and y as starting point, and continues to iterate through until z^2 >= left_side
+    if x >= y:
+        while z**n < left_side:
+            z+= 1
+    
+    else:
+        while z**n < left_side:
+            z+= 1
+    
+    #Determines if z or z+1 is the closer near miss
+    #Near_miss_iteration returns: x,y,z, actual miss, relative miss as a LIST
+    if z**n - left_side < (z+1)**n - left_side:
+        return ([x,y,z, (z**n - left_side), ((z**n - left_side) / left_side)])
+    
+    else:
+        return ([x,y,z, ((z + 1)**n - left_side), (((z + 1)**n - left_side) / left_side)])
+    
 
 #ITERATE through all possible x and y natural numbers, tracking lowest relative miss
 
