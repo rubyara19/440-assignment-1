@@ -8,7 +8,7 @@
 # output and store if the new relative miss is lower, continuing until all iterations are finished and the lowest relative
 # miss have been found.
 
-#Stored in: main.py
+#Stored in: 440-assignments-1/near-miss-program
 #Created by: Ruby Radosevic and Carlos Manzo
 #Contact at: rubyaradosevic@lewisu.edu and cmanzo20@stu.jjc.edu
 #Course: Software Engineering 44000 - LT1
