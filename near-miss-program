@@ -3,7 +3,7 @@
 #TITLE
 #Name of file holding program
 #Created by: Ruby Radosevic and Carlos Manzo
-#Contact at: rubyaradosevic@lewisu.edu and {CARLO'S EMAIL}
+#Contact at: rubyaradosevic@lewisu.edu and cmanzo20@stu.jjc.edu
 #Course: Software Engineering 44000 - LT1
 #Completed on: DATE OF SUBMISSION
 #Program explanation
@@ -22,9 +22,6 @@
 #10 <=y <= k
 
 #NOTES: program takes n for the power, and k, which should be AT LEAST >=10 AND have an upper limit to stop crashing
-
-
-### PROGRAM ###
 
 #NEAR_MISS_ITERATION: solves for z value, actual miss, and relative miss for one x and y value
 def near_miss_iteration(n,x,y):
@@ -48,8 +45,37 @@ def near_miss_iteration(n,x,y):
     else:
         return ([x,y,z, ((z + 1)**n - left_side), (((z + 1)**n - left_side) / left_side)])
     
+### MAIN PROGRAM ###
+#Variable declaration
+n=0
+k=0
+x=10
+y=10
+lowest_near_miss=100000
+lowest_relative_miss=100000
+lowest_list = []
+
+#Prompt user for a valid input for n
+while (n<2 or n>12):
+    n=int(input("Please enter a power between 2 and 12 to use for n\n"))
+
+#Prompt user for a valid input for k
+while (k<10 or k>100):
+    k=int(input("Please enter an upper limit for k between 10 and 100 to use for k\n"))  #100 is hard coded upper limit, susceptible to change
 
 #ITERATE through all possible x and y natural numbers, tracking lowest relative miss
+while(x<=k):
+    while(y<=k):
+        if(near_miss_iteration(n,x,y)[4] < lowest_relative_miss):
+            lowest_list = near_miss_iteration(n,x,y)
+            lowest_relative_miss = lowest_list[4]
+            print("New lowest relative miss found!\nx = ", lowest_list[0], " y = ", lowest_list[1], "z = ", lowest_list[2], 
+                  "Actual Miss: ", lowest_list[3], " Relative Miss: ", lowest_list[4]*100,"%")
+        y+=1
+    x+=1
+    y= 10
+print("The lowest found relative list is x = ", lowest_list[0], " y = ", lowest_list[1], "z = ", lowest_list[2], 
+    "Actual Miss: ", lowest_list[3], " Relative Miss: ", lowest_list[4]*100,"%")
 
 #FOR EACH NEW SMALLEST RELATIVE MISS: PRINT current x,y,z, actual miss (x^n + y^n) - ( (z+=1) ^ n) and
 #relative miss ( (x^n + y^n) - ( (z+=1) ^ n) ) / (x^n + y^n)
