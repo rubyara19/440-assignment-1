@@ -6,6 +6,6 @@ Hi, and thank you for checking out my first software engineering assignment! All
 1. Open Git Bash and clone repository.
 git clone https://github.com/rubyara19/440-assignment-1
 2. Enter downloaded repository.
-cd 440-assignment-1
+cd ~/440-assignment-1
 3. Run near-miss-program using winpty.
 winpty python near-miss-program
